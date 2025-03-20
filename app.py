@@ -12,12 +12,9 @@ from PIL import Image
 import time
 import random
 
-# 🔥 Firebase Setup
-if not firebase_admin._apps:
-    cred = credentials.Certificate(st.secrets["firebase"])
-if not firebase_admin._apps:
-    initialize_app(cred)
-db = firestore.client()
+# Load Firebase credentials from secrets
+cred = credentials.Certificate(st.secrets["firebase"])
+initialize_app(cred)
 
 # 🚀 Session State Initialization Function
 def initialize_session_state():
