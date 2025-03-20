@@ -1,4 +1,5 @@
 import streamlit as st
+from firebase_admin import credentials, initialize_app
 import firebase_admin
 from firebase_admin import credentials, firestore, auth
 from google.cloud.firestore_v1 import FieldFilter  # Import FieldFilter for the new syntax
@@ -13,8 +14,9 @@ import random
 
 # 🔥 Firebase Setup
 if not firebase_admin._apps:
-    cred = credentials.Certificate("serviceAccountKey.json")
-    firebase_admin.initialize_app(cred)
+    cred = credentials.Certificate(st.secrets["firebase"])
+if not firebase_admin._apps:
+    initialize_app(cred)
 db = firestore.client()
 
 # 🚀 Session State Initialization Function
