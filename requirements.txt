@@ -2,3 +2,4 @@ firebase-admin
 streamlit
 matplotlib
 pillow 
+streamlit-option-menu
