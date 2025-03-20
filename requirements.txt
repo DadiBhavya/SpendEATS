@@ -1,4 +1,4 @@
 firebase-admin
 streamlit
 matplotlib
-pillowgit 
+pillow 
